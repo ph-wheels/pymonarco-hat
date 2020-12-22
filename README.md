@@ -21,7 +21,7 @@ Clone this repository:
 cd ~
 git clone https://github.com/bjarnekvae/pymonarco-hat.git
 </pre>
-
+NOTE: Prior to building some additional code is required to monarco.c which resides within the Monarco src folder 
 ## Build library
 In order for the Python wrapper to work we need to build a library file from the Monarco HAT source code, this can be done like this:
 <pre>
