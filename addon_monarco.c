@@ -71,11 +71,10 @@ void sdc_init(monarco_cxt_t *cxt, uint16_t hw_config, uint16_t rs485_baud, uint1
     sdc_item_rs485_baud = &cxt->sdc_items[i]; cxt->sdc_items[i++] = (monarco_sdc_item_t){
         .address = MONARCO_SDC_REG_RS485BAUD,
         .value = rs485_baud,
+        //384,
         .write = 1,
         .request = 1
     };
-    //MONARCO_DPRINT(MONARCO_DPF_VERB, "monarco_sdc_rs485_speed : %i ", rs485_bd);
-    printf("baud %i\n", rs485_bd);
     sdc_item_rs485_mode = &cxt->sdc_items[i]; cxt->sdc_items[i++] = (monarco_sdc_item_t){
         .address = MONARCO_SDC_REG_RS485MODE,
         .value = rs485_mode,
