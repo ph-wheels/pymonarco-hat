@@ -148,6 +148,14 @@ class Monarco(threading.Thread):
                 self.__monarco.monarco_main(ctypes.pointer(self.__cxt))
             time.sleep(self.cycle_interval)
 
+    def sdc_load(self, hw_config, rs485_baud, rs485_mode):
+            with self.__mutex:
+                self.__monarco.sdc_init(ctypes.pointer(self.__cxt), hw_config, rs485_baud, rs485_mode)
+
+    def sdc_exec(self):
+            with self.__mutex:
+                self.__monarco.monarco_main(ctypes.pointer(self.__cxt))
+
     def set_digital_out(self, port, value):
         """
         Write to digital output
